@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mattylll.github.io/devexit-2026-q3-08-development-exit-finance-rates/sitemap.xml
