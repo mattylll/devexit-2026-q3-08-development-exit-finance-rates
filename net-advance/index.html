@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Development exit net advance calculator | DevExit</title>
+<meta name="description" content="Compare two illustrative exit finance structures. Deduct retained interest and fees from the gross facility to test the cash available for redemption.">
+<link rel="canonical" href="https://mattylll.github.io/devexit-2026-q3-08-development-exit-finance-rates/net-advance/">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<a class="skip" href="#calculator">Skip to calculator</a>
+<header><div class="wrap top"><a class="brand" href="https://devexit.co.uk/">DevExit<span>RESEARCH TOOLS</span></a><a href="../">Rates explainer <span aria-hidden="true">↗</span></a></div></header>
+<main class="wrap">
+<section class="intro">
+<p class="eyebrow">DX-02 / COMPLETION FUNDING</p>
+<h1>A lower rate.<br>But enough cash to refinance?</h1>
+<p class="lead">The gross facility is not the amount available to repay your existing loan. Compare what remains after retained interest, fees and completion costs.</p>
+<p class="byline">By Matt Lenzie for DevExit · 3 November 2026</p>
+</section>
+<div class="notice"><strong>Illustrative model, not a finance quote.</strong> The example rates span 0.65% to 0.85% per month. They are invented assumptions, not current offers or lending criteria. Change the figures to explore the arithmetic.</div>
+<section id="calculator" aria-labelledby="calc-title">
+<div class="section-head"><div><p class="eyebrow">01 / SET THE ASSUMPTIONS</p><h2 id="calc-title">From facility to cash</h2></div><button type="button" id="reset">Reset example</button></div>
+<form id="inputs" novalidate>
+<fieldset class="shared"><legend>Shared completion figures</legend><div class="fields">
+<label>Gross facility (£)<input id="gross" name="gross" type="number" min="1" max="10000000000" step="0.01" value="3300000" required></label>
+<label>Existing loan redemption (£)<input id="redemption" name="redemption" type="number" min="0" max="10000000000" step="0.01" value="3000000" required></label>
+<label>Arrangement fee (% of gross)<input id="fee" name="fee" type="number" min="0" max="100" step="0.01" value="2" required></label>
+<label>Other completion costs (£)<input id="costs" name="costs" type="number" min="0" max="10000000000" step="0.01" value="20000" required></label>
+</div><p class="hint">Use a dated redemption figure including the existing lender's accrued interest and charges. Other costs are assumed to be deducted from the new facility, not funded separately.</p></fieldset>
+<div class="scenario-inputs">
+<fieldset><legend><span class="badge">A</span> Structure A</legend><div class="fields two"><label>Monthly simple rate (%)<input id="rateA" type="number" min="0" max="10" step="0.01" value="0.65" required></label><label>Months of interest retained<input id="monthsA" type="number" min="0" max="60" step="1" value="12" required></label></div></fieldset>
+<fieldset><legend><span class="badge alt">B</span> Structure B</legend><div class="fields two"><label>Monthly simple rate (%)<input id="rateB" type="number" min="0" max="10" step="0.01" value="0.85" required></label><label>Months of interest retained<input id="monthsB" type="number" min="0" max="60" step="1" value="6" required></label></div></fieldset>
+</div>
+</form>
+<p id="error" role="alert" hidden>Enter a valid number in every field. Use non-negative amounts, a positive gross facility and whole reserve months within the displayed limits.</p>
+<noscript><p class="notice">Enable JavaScript for interactive results. The worked example and formula below remain available.</p></noscript>
+<div id="results" hidden>
+<div class="results-grid" aria-live="polite" aria-atomic="true">
+<article class="result" id="cardA"><p class="eyebrow">STRUCTURE A</p><p class="status" id="statusA"></p><p class="amount" id="balanceA"></p><p class="result-note" id="noteA"></p></article>
+<article class="result" id="cardB"><p class="eyebrow">STRUCTURE B</p><p class="status" id="statusB"></p><p class="amount" id="balanceB"></p><p class="result-note" id="noteB"></p></article>
+</div>
+<div class="table-wrap"><table><caption>Completion statement comparison</caption><thead><tr><th scope="col">Where the money goes</th><th scope="col">Structure A</th><th scope="col">Structure B</th></tr></thead><tbody id="bridge"></tbody></table></div>
+<p class="hint" id="required"></p>
+<div class="actions"><button type="button" class="primary" id="download">Download comparison CSV</button><button type="button" id="print">Print this comparison</button><span>Your figures stay in this browser. No account or submission.</span></div>
+</div>
+</section>
+<section class="reading" aria-labelledby="read-title">
+<div><p class="eyebrow">02 / READ THE RESULT</p><h2 id="read-title">A cash test,<br>not a ranking of loans.</h2></div>
+<div>
+<p>In the starting example, both structures offer £3.3 million against a £3 million redemption. Each deducts a 2% arrangement fee and £20,000 of other costs.</p>
+<p><strong>Structure A:</strong> 0.65% a month retained for 12 months uses £257,400. Net proceeds are £2,956,600, leaving a £43,400 shortfall.</p>
+<p><strong>Structure B:</strong> 0.85% a month retained for six months uses £168,300. Net proceeds are £3,045,700, leaving £45,700 after redemption.</p>
+<p>The difference comes from the retention period. Hold all other inputs equal and a lower rate improves the net advance. Six months retained does not establish a six-month loan term or prove the interest reserve will last until repayment. Any later interest still needs funding.</p>
+<p>A positive balance does not establish eligibility, adequate security or a viable repayment route. A shortfall identifies the cash that this simplified completion statement does not cover. Discuss the full structure alongside the <a href="https://devexit.co.uk/finance/development-exit-refinance/">development exit refinance requirements</a>.</p>
+</div>
+</section>
+<section class="method" aria-labelledby="method-title"><p class="eyebrow">03 / METHOD &amp; LIMITS</p><h2 id="method-title">Every deduction, visible.</h2>
+<div class="formula">Retained interest = gross facility × monthly rate ÷ 100 × reserve months<br>Net advance = gross facility − retained interest − arrangement fee − other costs<br>Completion balance = net advance − existing loan redemption</div>
+<p>Interest is simple, calculated on the full gross facility for the selected period. The arrangement fee is a percentage of the gross facility and is deducted once. No fee is added to the loan. Results are calculated without intermediate rounding and displayed to the nearest pound; CSV values include pence.</p>
+<p>The indicative gross needed to cover redemption solves: (redemption + other costs) ÷ (1 − monthly rate × reserve months ÷ 100 − fee ÷ 100). If the denominator is zero or negative, no finite positive facility solves this model. This calculation is not a loan approval or a valuation test.</p>
+<p>The tool excludes compounding, staged drawdowns, interest on a changing balance, reserve rebates, servicing interest from sales, early repayments, exit charges on the new loan, extension charges and taxes unless you include them in the appropriate input. It does not model net sales proceeds or maturity repayment. Actual facility documents may define the rate base, retention and fees differently.</p>
+</section>
+<section class="sources"><p class="eyebrow">04 / RESEARCH &amp; RELATED WORK</p><h2>Put the calculation in context.</h2><div class="source-grid">
+<article><h3>Research edition</h3><p>The <a href="https://devexit.co.uk/reports/q3-2026-development-exit-finance-report/">DevExit Q3 2026 report</a> describes the wider development exit market. Its public-register counts do not establish loan sizes, prices or underwriting criteria and do not calibrate this calculator.</p><p>The <a href="https://doi.org/10.5281/zenodo.23925176">national data supplement</a> documents those research tables and their limits. No source dataset or Rightmove series is redistributed here.</p></article>
+<article><h3>What if sales take longer?</h3><p>The separate worked briefing, <a href="https://propertyfinance.hashnode.dev/development-exit-finance-what-three-extra-months-can-cost">what three extra months can cost</a>, compares interest during a delay with a sale-price concession. Use it for the time question after checking this completion funding question.</p><p>These are contributions to the same DevExit research programme, not independent corroborating studies.</p></article>
+</div></section>
+</main>
+<footer><div class="wrap"><strong>Matt Lenzie / DevExit</strong><p>Prepared with AI assistance. DevExit is a trading name of Lenzie Consulting Ltd and a finance arranger and introducer, not a lender. General illustrative analysis, not financial, legal, tax or investment advice or an offer of finance.</p><p>© 2026 DevExit. Original content and code: all rights reserved. <a href="README.md">Model documentation</a> · <a href="https://github.com/mattylll/devexit-2026-q3-08-development-exit-finance-rates/tree/gh-pages/net-advance">View source</a></p></div></footer>
+<script type="module" src="app.mjs"></script>
+</body></html>
